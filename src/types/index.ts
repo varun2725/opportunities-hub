@@ -4,6 +4,17 @@ export interface Opportunity {
   company: string;
   location: string;
   type: string;
+  mode: "On-site" | "Remote" | "Hybrid";
+  compensation: string;
+  skills: string[];
+  eligibility: string;
+  openings: number;
+  postedBy: "Recruiter" | "Alumni" | "Placement Cell";
+  status: "PUBLISHED" | "PENDING_APPROVAL" | "CLOSED";
+  source: "Internal" | "External";
+  applicationMethod: "Apply on portal" | "External link";
+  eligible?: boolean;
+  matchScore?: number;
   deadline: string;
   postedAt: string;
   description: string;
@@ -14,6 +25,8 @@ export interface OpportunityQuery {
   search?: string;
   type?: string;
   location?: string;
+  mode?: string;
+  source?: string;
   sort?: "newest" | "deadline" | "title";
   page?: number;
   limit?: number;
